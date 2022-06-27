@@ -55,7 +55,7 @@
     </header>
 
     <!--FORMULARIO--->
-    <form action="../planti/funciones/insertarProducto.php" method="POST">
+    <form action="../forrajes_Manuelin/funciones/insertarProducto.php" method="POST">
 
 
     <div class="mb-3">
