@@ -26,10 +26,8 @@ CREATE TABLE `producto`  (
   `IdCategoria` int NOT NULL,
   `IdMarca` int NOT NULL,
   PRIMARY KEY (`idProducto`) USING BTREE,
-  INDEX `fk_seccion_calzado`(`IdSeccion`) USING BTREE,
   INDEX `fk_categoria_calzado`(`IdCategoria`) USING BTREE,
-  INDEX `fk_marca_calzado`(`IdMarca`) USING BTREE,
-  INDEX `fk_material_calzado`(`IdMaterial`) USING BTREE
+  INDEX `fk_marca_calzado`(`IdMarca`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 CREATE TABLE `ProductoVenta`  (
@@ -40,23 +38,20 @@ CREATE TABLE `ProductoVenta`  (
   `idProducto` varchar(6) NOT NULL,
   PRIMARY KEY (`IdProductoVenta`) USING BTREE,
   INDEX `fk_venta_ventac`(`IdVenta`) USING BTREE,
-  INDEX `fk_talla_ventac`(`IdTalla`) USING BTREE
+  INDEX `fk_poducto_ventac`(`IdProducto`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 CREATE TABLE `venta`  (
   `IdVenta` int NOT NULL AUTO_INCREMENT,
-  `IdCliente` int NOT NULL,
   `FechaHoraVenta` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `TotalVenta` float(6, 2) NOT NULL,
-  PRIMARY KEY (`IdVenta`) USING BTREE,
-  INDEX `fk_cliente_venta`(`IdCliente`) USING BTREE
+  PRIMARY KEY (`IdVenta`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
-ALTER TABLE `producto` ADD CONSTRAINT `fk_categoria_calzado` FOREIGN KEY (`IdCategoria`) REFERENCES `categoria` (`IdCategoria`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `producto` ADD CONSTRAINT `fk_marca_calzado` FOREIGN KEY (`IdMarca`) REFERENCES `marca` (`IdMarca`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `producto` ADD CONSTRAINT `fk_material_calzado` FOREIGN KEY (`IdMaterial`) REFERENCES `material` (`IdMaterial`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `producto` ADD CONSTRAINT `fk_seccion_calzado` FOREIGN KEY (`IdSeccion`) REFERENCES `seccion` (`IdSeccion`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `ProductoVenta` ADD CONSTRAINT `fk_venta_ventac` FOREIGN KEY (`IdVenta`) REFERENCES `venta` (`IdVenta`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `ProductoVenta` ADD CONSTRAINT `fk_ProductoVenta_producto_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE RESTRICT ON UPDATE CASCADE;
-ALTER TABLE `venta` ADD CONSTRAINT `fk_cliente_venta` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `producto` ADD CONSTRAINT `fk_categoria_producto` FOREIGN KEY (`IdCategoria`) REFERENCES `categoria` (`IdCategoria`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `producto` ADD CONSTRAINT `fk_marca_producto` FOREIGN KEY (`IdMarca`) REFERENCES `marca` (`IdMarca`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE `ProductoVenta` ADD CONSTRAINT `fk_venta_ProductoVenta` FOREIGN KEY (`IdVenta`) REFERENCES `venta` (`IdVenta`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `ProductoVenta` ADD CONSTRAINT `fk_Producto_ProductoVenta` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
 
