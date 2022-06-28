@@ -2,9 +2,7 @@
     include("../conexiones/conexion.php");
 
     
-    $FechaHoraVenta = $_POST['txtFecha'];
-
-    $TotalVenta = $_POST['txtTotal'];
+    $FechaHoraVenta = date('Y');
 
     
 
@@ -13,30 +11,19 @@
     $PrecioVenta = $_POST['txtPrecioVenta'];
     $idProducto = $_POST['cmbProductoVenta'];
 
-    $sentencia = "INSERT INTO venta VALUES(
-        DEFAULT,
-        '$FechaHoraVenta',
-        '$TotalVenta')";
-
     
-        
-    if(mysqli_query($conexion, $sentencia)){
-        $sentencia1 = "INSERT INTO productoventa VALUES(
+        $sentencia = "INSERT INTO productoventa VALUES(
             DEFAULT,
-            '$idVenta',
             '$Cantidad',
             '$PrecioVenta',
+            '$FechaHoraVenta',
             '$idProducto')";
 
-            if(mysqli_query($conexion, $sentencia1)){
-                header("Location: ../index.html");
+            if(mysqli_query($conexion, $sentencia)){
+                header("Location: ../about.php");
             }else{
                 echo "no";
             }
-        
-    }else{
-        echo "no";
-    }
 
     mysqli_close($conexion);
 ?>
