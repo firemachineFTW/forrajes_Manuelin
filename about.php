@@ -59,16 +59,6 @@
 
 
                         <div class="mb-3">
-                            <label for="" class="form-label">Fecha de la venta</label>
-                            <input type="text" class="form-control" name="txtFecha" id="FechaHora" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="" class="form-label">Total de la venta</label>
-                            <input type="number" class="form-control" name="txtTotal" id="totalVenta" required>
-                        </div>
-
-                        <div class="mb-3">
                             <label for="" class="form-label">Cantidad</label>
                             <input type="number" class="form-control" name="txtCantidad" id="Cantiddad" required>
                         </div>
