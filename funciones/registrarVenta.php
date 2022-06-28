@@ -1,29 +1,24 @@
 <?php
     include("../conexiones/conexion.php");
 
-    
-    $hoy = date("F j, Y, g:i a");
-    //$hoy = "hghg";
-    
-
+    $FechaHoraVenta = $_POST['dtFecha'];
     $Cantidad = $_POST['txtCantidad'];
-
     $PrecioVenta = $_POST['txtPrecioVenta'];
     $idProducto = $_POST['cmbProductoVenta'];
 
     
         $sentencia = "INSERT INTO productoventa VALUES(
-            DEFAULT,
-            $Cantidad,
-            $PrecioVenta,
-            '$hoy',
+             DEFAULT,
+            '$Cantidad',
+            '$PrecioVenta',
+            '$FechaHoraVenta',
             '$idProducto')";
 
-            if(mysqli_query($conexion, $sentencia)){
-                header("Location: ../about.php");
+            if(mysqli_query($conexion,$sentencia)){
+                header("Location: ../index.html");
             }else{
                 echo "no";
             }
 
     mysqli_close($conexion);
-?>
+

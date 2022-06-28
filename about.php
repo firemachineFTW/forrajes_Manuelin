@@ -68,6 +68,11 @@
                             <input type="number" class="form-control" name="txtPrecioVenta" id="PrecioFinal" required>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="" class="form-label">Fecha de la venta</label>
+                            <input type="date" class="form-control" name="dtFecha" id="PrecioFinal" required>
+                        </div>
+
                         <div class="form-group mb-3">
                             <label for="exampleFormControlInput1">Producto</label>
                             <select class="form-select" aria-label="Default select example" name="cmbProductoVenta" id="idProducto">
@@ -76,9 +81,9 @@
                                 include("./conexiones/conexion.php");
                                 $sentencia = "SELECT * FROM  producto";
                                 $resultado = mysqli_query($conexion, $sentencia);
-                                while ($regCategoria = mysqli_fetch_assoc($resultado)) {
+                                while ($regProductoVenta = mysqli_fetch_assoc($resultado)) {
                                     echo "
-                                                              <option value='" . $regCategoria['IdProducto'] . "'>" . $regCategoria["DescripcionProduceto"] . "</option>";
+                                                              <option value='" . $regProductoVenta['IdProducto'] . "'>" . $regProductoVenta["DescripcionProduceto"] . "</option>";
                                 }
                                 mysqli_close($conexion);
                 
