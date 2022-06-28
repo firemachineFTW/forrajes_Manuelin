@@ -14,7 +14,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    include("../planti/conexiones/conexion.php"); //importar la conexion
+                    include("../forrajes_Manuelin/conexiones/conexion.php"); //importar la conexion
                     $sentencia1 = "SELECT
                         producto.idProducto, 
                         producto.DescripcionProduceto, 
