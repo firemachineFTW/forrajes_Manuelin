@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -35,80 +36,84 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+        <header class="masthead" style="background-image: url('assets/img/about-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Contact Me</h1>
-                            <span class="subheading">Have questions? I have answers.</span>
+                            <h1>Ventas</h1>
+                            <span class="subheading">Registro de ventas</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
+        <form action="../forrajes_Manuelin/funciones/registrarVenta.php" method="POST">
+
+
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-                        <div class="my-5">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <br />
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
-                            </form>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Folio de venta</label>
+                            <input type="text" class="form-control" name="txtFolio" id="Folio" required maxlength="6">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Codigo del producto</label>
+                            <input type="number" class="form-control" name="txtCodigoProducto" id="Cantiddad" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Fecha de la venta</label>
+                            <input type="text" class="form-control" name="txtFecha" id="FechaHora" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Total de la venta</label>
+                            <input type="number" class="form-control" name="txtTotal" id="totalVenta" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" name="txtCantidad" id="Cantiddad" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Precio Final</label>
+                            <input type="number" class="form-control" name="txtPrecioVenta" id="PrecioFinal" required>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="exampleFormControlInput1">Producto</label>
+                            <select class="form-select" aria-label="Default select example" name="cmbProductoVenta" id="idProducto">
+                                <option>--Seleccione una opcion--</option>
+                                <?php
+                                include("./conexiones/conexion.php");
+                                $sentencia = "SELECT * FROM  producto";
+                                $resultado = mysqli_query($conexion, $sentencia);
+                                while ($regCategoria = mysqli_fetch_assoc($resultado)) {
+                                    echo "
+                                                              <option value='" . $regCategoria['IdProducto'] . "'>" . $regCategoria["DescripcionProduceto"] . "</option>";
+                                }
+                                mysqli_close($conexion);
+                
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <button  class="btn btn-success">Guardar</button>
+                            <a class="btn btn-danger" href="./insertar.php" role="button">Cancelar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+        </form>
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -149,10 +154,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
