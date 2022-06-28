@@ -15,10 +15,9 @@
             '$idProducto')";
 
             if(mysqli_query($conexion,$sentencia)){
-                header("Location: ../index.html");
+                header("Location: ../about.php");
             }else{
                 echo "no";
             }
 
     mysqli_close($conexion);
-

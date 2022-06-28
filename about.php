@@ -49,7 +49,7 @@
             </div>
         </header>
         <!-- Main Content-->
-        <form action="../forrajes_Manuelin/funciones/registrarVenta.php" method="POST">
+        <form action="../forrajes_Manuelin/funciones/insertarVenta.php" method="POST">
 
 
         <main class="mb-4">
