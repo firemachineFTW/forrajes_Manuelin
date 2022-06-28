@@ -76,7 +76,7 @@
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Fecha y Hora de la compra</label>
-                <input type="" class="form-control" name="txtFechaHoraCompra" id="FechaHoraCompra" placeholder="" required>
+                <input type="date" class="form-control" name="txtFechaHoraCompra" id="FechaHoraCompra" placeholder="" required>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Pecio Compra</label>

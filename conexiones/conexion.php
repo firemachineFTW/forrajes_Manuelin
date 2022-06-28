@@ -1,7 +1,7 @@
 <?php
     $servidor = "localhost";
     $usuario = "root";
-    $password = "firemachineFTW.23";
+    $password = "12345";
     $db = "forrajesss";
 
     $conexion = mysqli_connect(

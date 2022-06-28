@@ -2,8 +2,8 @@
     include("../conexiones/conexion.php");
 
     
-    $FechaHoraVenta = date('Y');
-
+    $hoy = date("F j, Y, g:i a");
+    //$hoy = "hghg";
     
 
     $Cantidad = $_POST['txtCantidad'];
@@ -14,9 +14,9 @@
     
         $sentencia = "INSERT INTO productoventa VALUES(
             DEFAULT,
-            '$Cantidad',
-            '$PrecioVenta',
-            '$FechaHoraVenta',
+            $Cantidad,
+            $PrecioVenta,
+            '$hoy',
             '$idProducto')";
 
             if(mysqli_query($conexion, $sentencia)){
