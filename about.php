@@ -57,15 +57,6 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
 
-                        <div class="mb-3">
-                            <label for="" class="form-label">Folio de venta</label>
-                            <input type="text" class="form-control" name="txtFolio" id="Folio" required maxlength="6">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="" class="form-label">Codigo del producto</label>
-                            <input type="number" class="form-control" name="txtCodigoProducto" id="Cantiddad" required>
-                        </div>
 
                         <div class="mb-3">
                             <label for="" class="form-label">Fecha de la venta</label>
@@ -107,7 +98,7 @@
 
                         <div class="mb-3">
                             <button  class="btn btn-success">Guardar</button>
-                            <a class="btn btn-danger" href="./insertar.php" role="button">Cancelar</a>
+                            <a class="btn btn-danger" href="./about.php" role="button">Cancelar</a>
                         </div>
                     </div>
                 </div>

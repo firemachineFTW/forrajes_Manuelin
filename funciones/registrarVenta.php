@@ -1,16 +1,20 @@
 <?php
     include("../conexiones/conexion.php");
 
-    $idVenta = $_POST['txtFolio'];
+    
     $FechaHoraVenta = $_POST['txtFecha'];
+
     $TotalVenta = $_POST['txtTotal'];
-    $idProductoVenta = $_POST['txtCodigoProducto'];
+
+    
+
     $Cantidad = $_POST['txtCantidad'];
+
     $PrecioVenta = $_POST['txtPrecioVenta'];
     $idProducto = $_POST['cmbProductoVenta'];
 
     $sentencia = "INSERT INTO venta VALUES(
-        '$idVenta',
+        DEFAULT,
         '$FechaHoraVenta',
         '$TotalVenta')";
 
