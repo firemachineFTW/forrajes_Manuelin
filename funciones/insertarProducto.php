@@ -7,11 +7,14 @@
     $precioFinal = $_POST['txtPrecioFinal'];
     $marca = $_POST['cmbMarca'];
     $categoria = $_POST['cmbCategoria'];
+    $stock = $_POST['txtStock'];
+
 
     $sentencia = "INSERT INTO producto VALUES(
         '$idProducto',
         '$descripcion',
         '$precioFinal',
+        '$stock',
         '$categoria',
         '$marca')";
 

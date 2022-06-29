@@ -78,7 +78,10 @@
             <label for="" class="form-label">Precio Final</label>
             <input type="number" class="form-control" name="txtPrecioFinal" id="PrecioFinal" placeholder="" required>
         </div>
-        
+        <div class="mb-3">
+            <label for="" class="form-label">Stock</label>
+            <input type="number" class="form-control" name="txtStock" id="Stock" placeholder="" required>
+        </div>
         <div class="form-group mb-3">
             <label for="exampleFormControlInput1">Categoria</label>
             <select class="form-select" aria-label="Default select example" name="cmbCategoria" id="idCategoria">
