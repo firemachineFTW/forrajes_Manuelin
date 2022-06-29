@@ -7,7 +7,7 @@
     $precioFinal = $_POST['txtPrecioFinal'];
     $marca = $_POST['cmbMarca'];
     $categoria = $_POST['cmbCategoria'];
-    $stock = $_POST['txtStock'];
+    $stock = 0;
 
 
     $sentencia = "INSERT INTO producto VALUES(
@@ -19,7 +19,7 @@
         '$marca')";
 
     if(mysqli_query($conexion,$sentencia)){
-        header("Location: ../index.html");
+        header("Location: ../insertar.php");
     }else{
         echo "no";
     }
