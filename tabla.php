@@ -44,7 +44,8 @@
                                    <td>" . $mostrar1["DescripcionProduceto"] . "</td>
                                    <td>" . $mostrar1["PrecioFinal"] . "</td>
                                    <td>" . $mostrar1["stock"] . "</td>  
-                                   <td><a href='updateproducto.php?idProducto=".$mostrar1["idProducto"]."'><i class='fas fa-edit'></a></i></td>                                  
+                                   <td><a href='actualizarProducto.php?idProducto=".$mostrar1["idProducto"]."'><i class='fas fa-edit'></a></i></td>
+                                   <td><a href='../forrajes_Manuelin/funciones/eliminarProducto.php?idProducto=".$mostrar1["idProducto"]."'><i class='fas fa-trash-alt'></a></i></td>
                                 </tr>";
                     }
                     mysqli_close($conexion);

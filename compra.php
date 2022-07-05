@@ -63,7 +63,7 @@
                     $resultado = mysqli_query($conexion, $sentencia);
                     while ($regProducto = mysqli_fetch_assoc($resultado)){
                         echo "
-                                                <option value='" . $regProducto['idProducto'] . "'>" . $regProducto["DescripcionProduceto"] . "</option>";
+                                                <option value='" . $regProducto['idProducto'] . "'>" . $regProducto["idProducto"] . "</option>";
                     }
                     mysqli_close($conexion);
 
