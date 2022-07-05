@@ -130,6 +130,32 @@ INSERT INTO `proveedor` VALUES (3, 'Malta Texo', 'Bruselas No. 626 Col. Moderna.
 INSERT INTO `proveedor` VALUES (4, 'MayoreoTotal', 'S/D', '(55) 3062 7969', 'clientes@mayoreototal.mx');
 INSERT INTO `proveedor` VALUES (5, 'Nestle', 'Ferrocarriles Nacionales Pte. A, Puente Jabonero, 54879 Cuautitlán, Méx.', '0800-10210', 'Servicioalconsumidor@pe.nestle.com');
 INSERT INTO `proveedor` VALUES (6, 'Propecsa', 'Av. Ignacio Zaragoza 105, La Libertad, 78394 San Luis, S.L.P.', '8007774523', 'contacto@propecsa.com.mx');
+INSERT INTO `marca` VALUES (30, 'Ganador');
+INSERT INTO `marca` VALUES (31, 'Dog Chaw');
+INSERT INTO `marca` VALUES (32, 'Pedigree');
+INSERT INTO `marca` VALUES (33, 'Purina');
+INSERT INTO `marca` VALUES (34, 'Pet Line');
+INSERT INTO `marca` VALUES (35, 'Pet Master');
+INSERT INTO `marca` VALUES (36, 'Woow');
+INSERT INTO `marca` VALUES (37, 'Super Kan');
+INSERT INTO `marca` VALUES (38, 'Pal Perro');
+INSERT INTO `marca` VALUES (39, 'Nupec');
+INSERT INTO `marca` VALUES (40, 'Cat Line');
+INSERT INTO `marca` VALUES (41, 'Minino Plus');
+INSERT INTO `marca` VALUES (42, 'Royal Canin');
+INSERT INTO `marca` VALUES (43, 'Cat Chow');
+INSERT INTO `marca` VALUES (44, 'Whiskas');
+INSERT INTO `marca` VALUES (45, 'Nupec');
+INSERT INTO `compra` VALUES (7, 'can123', 40, '2022-07-05', 400.00, 2);
+INSERT INTO `compra` VALUES (8, 'can123', 2000, '2022-06-28', 400.00, 2);
+INSERT INTO `producto` VALUES ('can123', 'bulto croqueta 25kg', 500.00, 1, 11, 31);
+INSERT INTO `producto` VALUES ('can345', '$descripcion', 200.00, 0, 11, 32);
+INSERT INTO `producto` VALUES ('can456', 'bulto croqueta 20kg', 359.00, 0, 11, 35);
+INSERT INTO `producto` VALUES ('can678', 'bulto croqueta 30kg', 800.00, 0, 11, 30);
+INSERT INTO `producto` VALUES ('cat123', 'bulto croqueta 5kg', 340.00, 0, 12, 40);
+INSERT INTO `producto` VALUES ('cat234', 'bulto croqueta 15kg', 450.00, 0, 12, 41);
+INSERT INTO `producto` VALUES ('cat345', 'bulto croqueta 10kg', 440.00, 0, 12, 42);
+INSERT INTO `producto` VALUES ('cat456', 'bulto croqueta 25kg', 600.00, 0, 12, 43);
 
 -- ----------------------------
 -- Table structure for venta
